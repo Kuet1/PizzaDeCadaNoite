@@ -1,0 +1,16 @@
+:root {
+  --color-bg: #0f1626;
+  --color-text: #f5efe6;
+  --color-surface: #1b2438;
+  --color-accent: #f4c542;
+  --color-primary: #c0392b;
+
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Rubik", Arial, sans-serif;
+
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4rem;
+}

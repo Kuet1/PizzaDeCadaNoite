@@ -1,0 +1,38 @@
+/* 1. Width includes padding and border */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margins */
+
+* {
+  margin: 0;
+}
+
+/* 3. Readable line height */
+
+body {
+  min-height: 100dvh;
+  line-height: 1.5;
+}
+
+/* 4. Images never overflow their container */
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Form elements use the page font */
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
