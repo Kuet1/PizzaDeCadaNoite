@@ -99,3 +99,111 @@ a {
   background-color: #25d366;
   color: var(--color-bg);
 }
+
+/* ===== Header ===== */
+
+/* sticky: stays in the page flow, then sticks to the top when scrolling */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: var(--header-height);
+  padding: 0 var(--space-md);
+  background-color: var(--color-surface);
+}
+
+.header__logo {
+  margin-right: auto; /* pushes the buttons to the right */
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Icon buttons: no default browser look, 44px touch target */
+.header__toggle,
+.header__cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-width: 2.75rem;
+  min-height: 2.75rem;
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+/* Red only as background: cream on red passes WCAG */
+.header__cart-count {
+  min-width: 1.5rem;
+  padding: 0 var(--space-xs);
+  border-radius: 999px;
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+/* Mobile: the menu drops down below the header, hidden by default */
+.nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+
+.nav__list {
+  display: none;
+  padding: var(--space-sm) var(--space-md) var(--space-md);
+  list-style: none;
+  background-color: var(--color-surface);
+}
+
+/* Open state comes from the same attribute the screen reader reads */
+.header__toggle[aria-expanded="true"] + .nav .nav__list {
+  display: block;
+}
+
+.nav__link {
+  display: block;
+  padding: var(--space-sm) 0;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav__link:hover {
+  color: var(--color-accent);
+}
+
+/* Desktop: no hamburger, links always visible in a row */
+@media (min-width: 48rem) {
+  .header {
+    padding: 0 var(--space-lg);
+  }
+
+  .header__toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+  }
+
+  .nav__list {
+    display: flex;
+    gap: var(--space-lg);
+    padding: 0;
+    background: none;
+  }
+
+  .nav__link {
+    padding: 0;
+  }
+}
