@@ -8,7 +8,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Molho de tomate da casa, muçarela, manjericão fresco e azeite",
     priceInCents: 4990,
     category: "traditional",
-    image: "/images/margherita.webp",
+    image: "images/margherita.webp",
     isFeatured: true,
   },
   {
@@ -17,7 +17,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Molho de tomate, muçarela e pepperoni levemente picante",
     priceInCents: 5490,
     category: "traditional",
-    image: "/images/pepperoni.webp",
+    image: "images/pepperoni.webp",
     isFeatured: true,
   },
   {
@@ -26,7 +26,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Muçarela, presunto de Parma, rúcula, tomate-cereja e lascas de parmesão",
     priceInCents: 6890,
     category: "special",
-    image: "/images/arugula.webp",
+    image: "images/arugula.webp",
     isFeatured: true,
   },
   {
@@ -35,7 +35,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Creme de queijos, mix de cogumelos, cebola caramelizada e tomilho",
     priceInCents: 6490,
     category: "special",
-    image: "/images/mushroom.webp",
+    image: "images/mushroom.webp",
     isFeatured: false,
   },
   {
@@ -44,7 +44,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Creme de chocolate ao leite, confeitos coloridos e pistache picado",
     priceInCents: 4590,
     category: "sweet",
-    image: "/images/chocolate.webp",
+    image: "images/chocolate.webp",
     isFeatured: true,
   },
   {
@@ -53,7 +53,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Chocolate granulado, morango, banana, manga e abacaxi",
     priceInCents: 4290,
     category: "sweet",
-    image: "/images/fruits.webp",
+    image: "images/fruits.webp",
     isFeatured: false,
   },
   {
@@ -62,7 +62,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Copo de 350 ml com gelo (cola, guaraná ou laranja)",
     priceInCents: 690,
     category: "drink",
-    image: "/images/soda.webp",
+    image: "images/soda.webp",
     isFeatured: false,
   },
   {
@@ -71,7 +71,7 @@ export const menuItems: MenuItem[] = [
     ingredients: "Limão-siciliano, hortelã e gelo (500 ml)",
     priceInCents: 1290,
     category: "drink",
-    image: "/images/lemonade.webp",
+    image: "images/lemonade.webp",
     isFeatured: false,
   },
 ];
