@@ -207,3 +207,156 @@ a {
     padding: 0;
   }
 }
+
+/* ===== Sections (shared spacing) ===== */
+
+.highlights,
+.menu,
+.about {
+  max-width: var(--content-width);
+  margin-inline: auto;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* ===== Hero ===== */
+
+/* isolation creates a new stacking context, so z-index: -1 stays inside the hero */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  min-height: 80svh;
+  padding: var(--space-xl) var(--space-md);
+}
+
+/* The photo fills the hero like a background, without being stretched */
+.hero__image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dark gradient over the photo: keeps the text readable on any image */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bg) 30%, transparent),
+    var(--color-bg)
+  );
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-md);
+  max-width: 40rem;
+}
+
+/* clamp(min, preferred, max): font grows with the screen, within limits */
+.hero__title {
+  font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+}
+
+.hero__text {
+  font-size: 1.125rem;
+}
+
+/* ===== About ===== */
+
+.about {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.about__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  object-fit: cover;
+}
+
+.about__content .section-title {
+  margin-bottom: var(--space-md);
+  text-align: left;
+}
+
+/* ===== Footer ===== */
+
+.footer {
+  display: grid;
+  gap: var(--space-lg);
+  padding: var(--space-xl) var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+}
+
+.footer__title {
+  margin-bottom: var(--space-sm);
+  color: var(--color-accent);
+  font-size: 1.125rem;
+}
+
+/* <address> is italic by default */
+.footer__address {
+  font-style: normal;
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-md);
+  padding: 0;
+  list-style: none;
+}
+
+.footer .button--whatsapp {
+  justify-self: start;
+}
+
+.footer__copy {
+  padding-top: var(--space-md);
+  border-top: 1px solid color-mix(in srgb, var(--color-text) 20%, transparent);
+  font-size: 0.875rem;
+}
+
+/* ===== Larger screens ===== */
+
+@media (min-width: 48rem) {
+  .hero {
+    align-items: center;
+    padding-inline: var(--space-xl);
+  }
+
+  /* On wide screens the gradient goes left → right, the text sits on the left */
+  .hero::after {
+    background: linear-gradient(
+      to right,
+      var(--color-bg),
+      color-mix(in srgb, var(--color-bg) 20%, transparent)
+    );
+  }
+
+  .about {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+    padding-inline: var(--space-xl);
+  }
+
+  /* The button and the copyright take the full row */
+  .footer .button--whatsapp,
+  .footer__copy {
+    grid-column: 1 / -1;
+  }
+}
