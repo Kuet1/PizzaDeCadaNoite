@@ -360,3 +360,87 @@ a {
     grid-column: 1 / -1;
   }
 }
+
+/* ===== Card (used by the carousel and the menu) ===== */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* rounds the image corners together with the card */
+  border-radius: var(--radius);
+  background-color: var(--color-surface);
+}
+
+.card__image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+/* flex: 1 makes every body stretch, so all footers line up at the bottom */
+.card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding: var(--space-md);
+}
+
+.card__title {
+  font-size: 1.25rem;
+}
+
+.card__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+  margin-top: auto;
+  padding-top: var(--space-sm);
+}
+
+.card__price {
+  color: var(--color-accent);
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.card__button {
+  padding-inline: var(--space-md);
+}
+
+/* ===== Carousel (scroll-snap) ===== */
+
+.carousel {
+  display: flex;
+  gap: var(--space-md);
+  padding: 0 0 var(--space-md);
+  overflow-x: auto;
+  list-style: none;
+  /* After a swipe, the scroll always stops aligned to a card */
+  scroll-snap-type: x mandatory;
+}
+
+/* 80% width: the next card peeks in, showing there is more to swipe */
+.carousel .card {
+  flex: 0 0 80%;
+  scroll-snap-align: start;
+}
+
+/* ===== Menu ===== */
+
+/* auto-fill + minmax: as many 16rem+ columns as fit, no media query needed */
+.menu__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: var(--space-lg);
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 48rem) {
+  .carousel .card {
+    flex-basis: calc((100% - 2 * var(--space-md)) / 3); /* 3 cards per view */
+  }
+}
