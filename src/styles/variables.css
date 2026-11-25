@@ -13,4 +13,8 @@
   --space-md: 1rem;
   --space-lg: 2rem;
   --space-xl: 4rem;
+
+  --radius: 0.75rem;
+  --header-height: 4rem;
+  --content-width: 72rem;
 }

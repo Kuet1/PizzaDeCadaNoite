@@ -1,5 +1,101 @@
+/* ===== Base ===== */
+
+html {
+  /* Anchor links (#menu) stop below the fixed header, not behind it */
+  scroll-padding-top: var(--header-height);
+}
+
+/* Smooth scroll only for users who did not ask the OS to reduce motion */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
 body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+}
+
+a {
+  color: var(--color-accent);
+}
+
+/* Visible focus ring for keyboard users (never remove it) */
+:focus-visible {
+  outline: 3px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* ===== Accessibility helpers ===== */
+
+/* Hidden on screen, still read by screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Off screen until it receives keyboard focus */
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  z-index: 100;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  border-radius: var(--radius);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ===== Shared pieces ===== */
+
+.section-title {
+  margin-bottom: var(--space-lg);
+  font-size: 2rem;
+  text-align: center;
+}
+
+/*
+ * Red (--color-primary) is used ONLY as a background.
+ * Cream text on red: 4.76:1 (passes WCAG AA).
+ * Red text on the dark background: ~3.3:1 (fails), so never use it for text.
+ */
+.button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  border: none;
+  border-radius: var(--radius);
+  background-color: var(--color-primary);
+  color: var(--color-text);
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Darken on hover: lightening the red would drop contrast below 4.5:1 */
+.button:hover {
+  filter: brightness(0.9);
+}
+
+/* WhatsApp green is too light for cream text, so the text is dark */
+.button--whatsapp {
+  background-color: #25d366;
+  color: var(--color-bg);
 }
