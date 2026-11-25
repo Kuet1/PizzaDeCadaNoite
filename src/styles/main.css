@@ -430,6 +430,38 @@ a {
 
 /* ===== Menu ===== */
 
+/* Filter chips: wrap to a second line on small screens */
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.filters__button {
+  min-height: 2.75rem;
+  padding: 0 var(--space-md);
+  border: 1px solid color-mix(in srgb, var(--color-text) 40%, transparent);
+  border-radius: 999px;
+  background: none;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.filters__button:hover {
+  border-color: var(--color-accent);
+}
+
+/* Active filter: styled from the same attribute the screen reader announces */
+.filters__button[aria-pressed="true"] {
+  border-color: var(--color-accent);
+  background-color: var(--color-accent);
+  color: var(--color-bg);
+  font-weight: 600;
+}
+
+
 /* auto-fill + minmax: as many 16rem+ columns as fit, no media query needed */
 .menu__list {
   display: grid;
