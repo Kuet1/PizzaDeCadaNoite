@@ -23,6 +23,7 @@ h2,
 h3 {
   font-family: var(--font-heading);
   line-height: 1.2;
+  text-wrap: balance; /* splits titles into lines of similar length */
 }
 
 a {
@@ -185,6 +186,7 @@ a {
 /* Desktop: no hamburger, links always visible in a row */
 @media (min-width: 48rem) {
   .header {
+    gap: var(--space-lg);
     padding: 0 var(--space-lg);
   }
 
