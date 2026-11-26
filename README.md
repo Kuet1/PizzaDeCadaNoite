@@ -69,7 +69,7 @@ src/
 
 ## Como usei IA neste projeto
 
-Este é um dos 5 sites que eu precisava entregar em uma semana. Usei o **Claude Code** como par de programação e mudei a forma de trabalhar no meio do caminho:
+Usei o **Claude Code** como par de programação e mudei a forma de trabalhar no meio do caminho:
 
 | Fase | Como foi |
 |---|---|
